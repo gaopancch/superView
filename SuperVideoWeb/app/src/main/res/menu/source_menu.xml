@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_youku"
+        android:orderInCategory="1"
+        android:title="优酷"/>
+    <item
+        android:id="@+id/menu_aiqiyi"
+        android:orderInCategory="2"
+        android:title="爱奇艺"/>
+    <item
+        android:id="@+id/menu_qq"
+        android:orderInCategory="3"
+        android:title="腾讯视频"/>
+    <item
+        android:id="@+id/menu_le"
+        android:orderInCategory="4"
+        android:title="乐视视频"/>
+    <item
+        android:id="@+id/close"
+        android:orderInCategory="5"
+        android:title="关闭程序"/>
+
+</menu>

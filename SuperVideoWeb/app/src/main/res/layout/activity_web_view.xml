@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_web_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:text="关闭" />
+    <LinearLayout
+        android:id="@+id/linear2button"
+        android:layout_toRightOf="@+id/goBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/vipButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="我是VIP \n 想观看vip视频，点这里" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear4button"
+        android:layout_below="@+id/linear2button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:textSize="12sp"
+            android:hint="输入你要浏览的视频网站，如 “优酷” “爱奇艺”"/>
+        <Button
+            android:id="@+id/search"
+            android:layout_weight="1"
+            android:text="搜索"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_below="@+id/linear4button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </WebView>
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:id="@+id/progressBar" />
+</RelativeLayout>

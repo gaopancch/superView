@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'gaopan'
+            keyPassword '5886656'
+            storeFile file('D:/pratice/SerectBox/secret.jks')
+            storePassword '5886656'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.gaopan.supervideoweb"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 3
+        versionName "3.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "mWifWhJV3U84tFpFp5Elf3",
+                GETUI_APP_KEY   : "xfLMKO0ztN7OZ3vtoK5Vj4",
+                GETUI_APP_SECRET: "oc0qhvW7e18aH4auFSvNU9"
+        ]
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+        }
+        signingConfig signingConfigs.config
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile 'com.getui:sdk:2.10.2.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    testCompile 'junit:junit:4.12'
+}
